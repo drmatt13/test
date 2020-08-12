@@ -14,11 +14,12 @@
 let htmlCode = [];
 let cssCode = [];
 let jsCode = [];
+let count = 0;
 
 for (i in array) {
+    count = 0;
     let pre;
     let code = '';
-    let count = 0;
     let card = document.createElement('div');
     card.classList.add('card');
     let html = document.createElement('div');
@@ -125,8 +126,11 @@ for (i in array) {
     }
 }
 let buttons = document.querySelectorAll('.button');
-for (let i=0; i<buttons.length; i++) {
-    buttons[i].addEventListener('click', () => {buildApp(i)});
+for (let i=0; i<array.length; i++) {
+    if (array[i][4].render) {
+        buttons[count].addEventListener('click', () => {buildApp(i)});
+        count++;
+    }
 }
 
 function buildApp(i) {
