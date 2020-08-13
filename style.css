@@ -169,7 +169,7 @@ body {
     .card {
         width: 50vw;
     }
-    .smoke {
+    .iframe {
         height: 65%;
         width: 55%;
     }
@@ -179,7 +179,7 @@ body {
     .card {
         width: 60vw;
     }
-    .smoke {
+    .iframe {
         height: 65%;
         width: 55%;
     }
@@ -189,7 +189,7 @@ body {
     .card {
         width: 70vw;
     }
-    .smoke {
+    .iframe {
         height: 75%;
         width: 65%;
     }
@@ -199,7 +199,7 @@ body {
     .card {
         width: 80vw;
     }
-    .smoke {
+    .iframe {
         height: 85%;
         width: 75%;
     }
@@ -210,7 +210,7 @@ body {
         width: 90vw;
         font-size: small;
     }
-    .smoke {
+    .iframe {
         height: 85%;
         width: 85%;
     }
