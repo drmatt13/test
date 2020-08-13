@@ -19,6 +19,7 @@ let count = 0;
 for (i in array) {
     count = 0;
     let pre;
+    let string;
     let code = '';
     let card = document.createElement('div');
     card.classList.add('card');
@@ -30,13 +31,15 @@ for (i in array) {
     html.appendChild(pre);
     for (j in array[i][0]) {
         pre = document.createElement('pre');
-        let string;
         if (array[i][0][j].comment) {
             pre.classList.add('comment');
-            string = '<!-- ' + array[i][0][j].comment + ' -->';
-        } else string = array[i][0][j].html;
+            pre.innerHTML = htmlentities.encode('<!-- ' + array[i][0][j].comment + ' -->');
+            string = '';
+        } else {
+            string = array[i][0][j].html;
+            pre.innerHTML = htmlentities.encode(string);
+        }
         code += string;
-        pre.innerHTML = htmlentities.encode(string);
         html.appendChild(pre);
         count++;
     }
@@ -56,13 +59,15 @@ for (i in array) {
     css.appendChild(pre);
     for (j in array[i][1]) {
         pre = document.createElement('pre');
-        let string;
         if (array[i][1][j].comment) {
             pre.classList.add('comment');
-            string = '/* ' + array[i][1][j].comment + '*/';
-        } else string = array[i][1][j].css;
+            pre.innerHTML = htmlentities.encode('/* ' + array[i][1][j].comment + ' */');
+            string = '';
+        } else {
+            string = array[i][1][j].css;
+            pre.innerHTML = htmlentities.encode(string);
+        }
         code += string;
-        pre.innerHTML = htmlentities.encode(string);
         css.appendChild(pre);
         count++;
     }
@@ -82,13 +87,15 @@ for (i in array) {
     js.appendChild(pre);
     for (j in array[i][2]) {
         pre = document.createElement('pre');
-        let string;
         if (array[i][2][j].comment) {
             pre.classList.add('comment');
-            string = '// ' + array[i][2][j].comment;
-        } else string = array[i][2][j].js;
+            pre.innerHTML = htmlentities.encode('// ' + array[i][2][j].comment);
+            string = '';
+        } else {
+            string = array[i][2][j].js;
+            pre.innerHTML = htmlentities.encode(string);
+        }
         code += string;
-        pre.innerHTML = htmlentities.encode(string);
         js.appendChild(pre);
         count++;
     }
@@ -111,6 +118,7 @@ for (i in array) {
     }
     if (count != 0) card.appendChild(output);
     count = 0;
+    if (card.childElementCount == 0) card.style.display = "none";
     document.body.appendChild(card);
     let button;
     if (array[i][4].render) {
@@ -148,4 +156,5 @@ function buildApp(i) {
     appContainer.appendChild(iframe);
     document.body.style.overflow = 'hidden';
     document.body.appendChild(appContainer);
+    console.log(html);
 }

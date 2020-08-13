@@ -82,16 +82,17 @@ body {
 }
 
 .button-container {
-    position: relative;
-    left: 10px;
-    top: 10px;
+    position: sticky;
+    left: 0px;
+    bottom: 0px;
+    transform: translate(10px, 10px);
 }
 
 .button {
     font-weight: bold;
     position: absolute;
     background-color: #82d8a6;
-    box-shadow: 0px 0px 7.5px 7.5px #383737;
+    box-shadow: 0px 0px 15px 2px rgb(40, 40, 40);
     padding: 5px;
     bottom: 10px;
     display: flex;
@@ -114,7 +115,7 @@ body {
 
 .button:hover {
     background-color: #73c997;
-    box-shadow: 0px 0px 7.5px 7.5px #3d3b3b;
+    box-shadow: 0px 0px 14px 3px rgb(30, 30, 30);
     cursor: pointer;
 }
 
@@ -138,7 +139,7 @@ body {
     min-height: 150px;
     height: 55%;
     width: 45%;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(255, 255, 255);
     border: none;
     box-shadow: var(--box-shadow);
 }
