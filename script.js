@@ -147,10 +147,10 @@ function buildApp(i) {
     appContainer.classList.add('app-container');
     let background = document.createElement('div');
     background.classList.add('background');
-    background.addEventListener('click', () => {appContainer.remove(); document.body.removeAttribute('style')});
+    background.addEventListener('click', () => {appContainer.remove();document.body.style.overflow = 'auto';});
     appContainer.appendChild(background);
     let iframe = document.createElement('iframe');
-    iframe.classList.add('smoke');
+    iframe.classList.add('iframe');
     let html = '<body>'+`<style>`+cssCode[i]+`</style>`+htmlCode[i]+`<script>`+jsCode[i]+`</script>`+'</body>';
     iframe.src = 'data:text/html;charset=utf-8,' + encodeURI(html);
     appContainer.appendChild(iframe);
