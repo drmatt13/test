@@ -146,7 +146,7 @@ function modifyButtonYspace(i) {
     let y1 = document.querySelectorAll('.card')[i].clientHeight;
     let y2 = document.querySelectorAll('.card')[i].scrollHeight;
     if (buttonPointer[i]) {
-        if (y1 >= 400 || y1 > y2) {
+        if (y1 >= 400 || y1 >= y2) {
             buttons[buttonPointer[i]].classList.add('y-space');
         } else {
             buttons[buttonPointer[i]].classList.remove('y-space');
