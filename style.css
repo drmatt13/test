@@ -11,11 +11,13 @@
 /* Track */
 ::-webkit-scrollbar-track {
     background: #4b4b4b;
+    border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #888;
+    border-radius: 5px;
 }
 
 /* Handle on hover */
@@ -25,6 +27,8 @@
 
 ::-webkit-scrollbar-corner {
     background: #4b4b4b;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
 * {
@@ -49,6 +53,10 @@ body {
     align-items: center;
 }
 
+body::-webkit-scrollbar-thumb {
+    border-radius: 0;
+}
+
 .card {
     position: relative;
     background-color: #4b4b4b;
@@ -60,6 +68,7 @@ body {
     margin-bottom: 25px;
     padding: 0 10px 10px 10px;
     overflow: auto;
+    border-radius: 5px;
 }
 
 .card:last-of-type {
@@ -95,7 +104,7 @@ body {
     font-weight: bold;
     position: absolute;
     background-color: #82d8a6;
-    box-shadow: 0px 0px 15px 2px rgb(40, 40, 40);
+    box-shadow: 0px 0px 5px 0px rgb(40, 40, 40);
     padding: 5px;
     bottom: 10px;
     display: flex;
@@ -108,17 +117,25 @@ body {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-.space1 {
-    right: 15px;
+.x-space1 {
+    right: 20px;
 }
 
-.space2 {
-    right: 5px;
+.x-space2 {
+    right: 10px;
 }
+
+.y-space {
+    bottom: 20px;
+}
+
+/* .y-space2 {
+    bottom: 10px;
+} */
 
 .button:hover {
-    background-color: #73c997;
-    box-shadow: 0px 0px 14px 3px rgb(30, 30, 30);
+    background-color: #85e7ae;
+    box-shadow: 0px 0px 5px 0px rgb(30, 30, 30);
     cursor: pointer;
 }
 

@@ -10,12 +10,10 @@
 		},
 	};
 })(window);
-
 let htmlCode = [];
 let cssCode = [];
 let jsCode = [];
 let count = 0;
-
 for (i in array) {
     count = 0;
     let pre;
@@ -129,18 +127,33 @@ for (i in array) {
         button.innerHTML = 'render';
         buttonContainer.appendChild(button);
         card.appendChild(buttonContainer);
-        if (card.offsetHeight != 400) button.classList.add('space1');
-        else button.classList.add('space2');
+        if (card.offsetHeight != 400) button.classList.add('x-space1');
+        else button.classList.add('x-space2');
+        if (card.offsetHeight != 400) button.classList.add('x-space1');
     }
 }
 let buttons = document.querySelectorAll('.button');
+let buttonPointer = [];
 for (let i=0; i<array.length; i++) {
     if (array[i][4].render) {
+        buttonPointer.push(count)
+        modifyButtonYspace(count);
         buttons[count].addEventListener('click', () => {buildApp(i)});
         count++;
+    } else buttonPointer.push(null);
+}
+function modifyButtonYspace(i) {
+    let y1 = document.querySelectorAll('.card')[i].clientHeight;
+    let y2 = document.querySelectorAll('.card')[i].scrollHeight;
+    if (buttonPointer[i]) {
+        if (y1 >= 400 || y1 > y2) {
+            buttons[buttonPointer[i]].classList.add('y-space');
+        } else {
+            buttons[buttonPointer[i]].classList.remove('y-space');
+        }
     }
 }
-
+window.addEventListener('resize', () => {for (i in array) modifyButtonYspace(i)});
 function buildApp(i) {
     if (document.querySelector('.app-container') != null) document.querySelector('.app-container').remove();
     let appContainer = document.createElement('div');

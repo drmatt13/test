@@ -101,7 +101,7 @@ document.body.appendChild(style);`}
         // output
         [],
         //render
-        {'render': false}
+        {'render': true}
     ],
 
     // card ----------------------------------------------------- >
@@ -124,7 +124,7 @@ updates css when screen size changes`}
         // output
         [],
         //render
-        {'render': false}
+        {'render': true}
     ],
 
         // card ----------------------------------------------------- >
