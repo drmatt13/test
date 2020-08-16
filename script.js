@@ -153,7 +153,9 @@ function modifyButtonYspace(i) {
         }
     }
 }
-window.addEventListener('resize', () => {for (i in array) modifyButtonYspace(i)});
+const ButtonSizeUpdate = () => {for (i in array) modifyButtonYspace(i)};
+window.addEventListener('resize', ButtonSizeUpdate);
+ButtonSizeUpdate();
 function buildApp(i) {
     if (document.querySelector('.app-container') != null) document.querySelector('.app-container').remove();
     let appContainer = document.createElement('div');
